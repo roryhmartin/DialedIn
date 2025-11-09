@@ -13,7 +13,7 @@ var builder = WebApplication.CreateBuilder(args);
 // var connectionString = builder.Configuration.GetConnectionString("DefaultConnection")
 //                        ?? "server=localhost;database=dialin;user=root;password=triumph9510";
 
-string connectionString = "server=127.0.0.1;database=dialin;user=root;password=triumph9510";
+string connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString)));

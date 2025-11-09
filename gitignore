@@ -1,0 +1,33 @@
+# User-specific files with passwords
+appsettings.Development.json
+appsettings.*.json
+!appsettings.json
+
+# Build results
+bin/
+obj/
+[Dd]ebug/
+[Rr]elease/
+
+# User-specific files
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Visual Studio Code
+.vscode/
+
+# JetBrains Rider
+.idea/
+
+# User secrets
+secrets.json
+
+# Environment files
+.env
+.env.local
+
+# OS files
+.DS_Store
+Thumbs.db
