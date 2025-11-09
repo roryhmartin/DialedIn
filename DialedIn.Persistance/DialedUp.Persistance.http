@@ -1,0 +1,6 @@
+@DialedUp.Persistance_HostAddress = http://localhost:5012
+
+GET {{DialedUp.Persistance_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

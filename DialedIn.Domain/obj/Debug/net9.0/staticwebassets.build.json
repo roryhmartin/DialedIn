@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "5JKWsD5MZ0jdC5zguNEzH+3eplr+Ry92Sx6yZ4d20zg=",
+  "Source": "DialedIn.Domain",
+  "BasePath": "_content/DialedIn.Domain",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}

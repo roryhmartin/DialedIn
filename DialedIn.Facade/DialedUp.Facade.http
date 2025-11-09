@@ -1,0 +1,6 @@
+@DialedUp.Facade_HostAddress = http://localhost:5067
+
+GET {{DialedUp.Facade_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

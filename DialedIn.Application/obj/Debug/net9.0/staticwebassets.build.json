@@ -1,0 +1,35 @@
+{
+  "Version": 1,
+  "Hash": "cmeHlEyKrHgQVGyTDR/NboLhB2pai7dwnEYzJhDKmJ8=",
+  "Source": "DialedIn.Application",
+  "BasePath": "_content/DialedIn.Application",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [
+    {
+      "Identity": "/Users/rorymartin/repos/DialedIn.API/DialedIn.Domain/DialedIn.Domain.csproj",
+      "Version": 2,
+      "Source": "DialedIn.Domain",
+      "GetPublishAssetsTargets": "ComputeReferencedStaticWebAssetsPublishManifest;GetCurrentProjectPublishStaticWebAssetItems",
+      "AdditionalPublishProperties": "Configuration=Debug;Platform=AnyCPU",
+      "AdditionalPublishPropertiesToRemove": "WebPublishProfileFile;TargetFramework",
+      "GetBuildAssetsTargets": "GetCurrentProjectBuildStaticWebAssetItems",
+      "AdditionalBuildProperties": "Configuration=Debug;Platform=AnyCPU",
+      "AdditionalBuildPropertiesToRemove": "WebPublishProfileFile;TargetFramework"
+    },
+    {
+      "Identity": "/Users/rorymartin/repos/DialedIn.API/DialedIn.Persistance/DialedIn.Persistance.csproj",
+      "Version": 2,
+      "Source": "DialedIn.Persistance",
+      "GetPublishAssetsTargets": "ComputeReferencedStaticWebAssetsPublishManifest;GetCurrentProjectPublishStaticWebAssetItems",
+      "AdditionalPublishProperties": "Configuration=Debug;Platform=AnyCPU",
+      "AdditionalPublishPropertiesToRemove": "WebPublishProfileFile;TargetFramework",
+      "GetBuildAssetsTargets": "GetCurrentProjectBuildStaticWebAssetItems",
+      "AdditionalBuildProperties": "Configuration=Debug;Platform=AnyCPU",
+      "AdditionalBuildPropertiesToRemove": "WebPublishProfileFile;TargetFramework"
+    }
+  ],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}

@@ -1,0 +1,24 @@
+{
+  "Version": 1,
+  "Hash": "dvu3drl1Q5xobRD5v3RQtUruOp0iKe1D65yBO9CYTOM=",
+  "Source": "DialedIn.Persistance",
+  "BasePath": "_content/DialedIn.Persistance",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [
+    {
+      "Identity": "/Users/rorymartin/repos/DialedIn.API/DialedIn.Domain/DialedIn.Domain.csproj",
+      "Version": 2,
+      "Source": "DialedIn.Domain",
+      "GetPublishAssetsTargets": "ComputeReferencedStaticWebAssetsPublishManifest;GetCurrentProjectPublishStaticWebAssetItems",
+      "AdditionalPublishProperties": "Configuration=Debug;Platform=AnyCPU",
+      "AdditionalPublishPropertiesToRemove": "WebPublishProfileFile;TargetFramework",
+      "GetBuildAssetsTargets": "GetCurrentProjectBuildStaticWebAssetItems",
+      "AdditionalBuildProperties": "Configuration=Debug;Platform=AnyCPU",
+      "AdditionalBuildPropertiesToRemove": "WebPublishProfileFile;TargetFramework"
+    }
+  ],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}
