@@ -1,12 +1,10 @@
+using DialedUp.Application.ClockEntries.Interfaces;
 using DialedUp.Application.Users;
-using DialedUp.Domain.ClockEntries;
 using DialedUp.Domain.Users;
-using DialedUp.Persistance;
-using Microsoft.EntityFrameworkCore;
 
 namespace DialedUp.Application.ClockEntries;
 
-public class ClockEntryApplicationService
+public class ClockEntryApplicationService : IClockEntryApplicationService
 {
     private readonly IClockInAndOutRepository _clockInAndOutRepository;
 
@@ -43,13 +41,13 @@ public class ClockEntryApplicationService
             .FirstOrDefault();
 
         return new UserAdto
-        {
-            Id = user.id,
-            FirstName = user.first_name,
-            LastName = user.last_name,
-            Email = user.email,
-            IsClockedIn = user.IsClockedIn,
-            LastEntry = lastEntry
-        };
+        (
+            user.id,
+            user.first_name,
+            user.last_name,
+            user.email,
+            user.IsClockedIn,
+            lastEntry
+        );
     }
 }

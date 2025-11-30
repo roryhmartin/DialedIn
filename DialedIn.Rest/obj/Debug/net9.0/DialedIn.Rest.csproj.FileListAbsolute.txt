@@ -146,3 +146,9 @@
 /Users/rorymartin/repos/DialedIn.API/DialedIn.Rest/obj/Debug/net9.0/rjsmcshtml.dswa.cache.json
 /Users/rorymartin/repos/DialedIn.API/DialedIn.Rest/obj/Debug/net9.0/staticwebassets.build.json.cache
 /Users/rorymartin/repos/DialedIn.API/DialedIn.Rest/bin/Debug/net9.0/BCrypt.Net-Next.dll
+/Users/rorymartin/repos/DialedIn.API/DialedIn.Rest/bin/Debug/net9.0/DialedIn.Facade.deps.json
+/Users/rorymartin/repos/DialedIn.API/DialedIn.Rest/bin/Debug/net9.0/DialedIn.Facade.runtimeconfig.json
+/Users/rorymartin/repos/DialedIn.API/DialedIn.Rest/bin/Debug/net9.0/DialedIn.Facade.staticwebassets.endpoints.json
+/Users/rorymartin/repos/DialedIn.API/DialedIn.Rest/bin/Debug/net9.0/DialedIn.Facade
+/Users/rorymartin/repos/DialedIn.API/DialedIn.Rest/bin/Debug/net9.0/DialedIn.Facade.dll
+/Users/rorymartin/repos/DialedIn.API/DialedIn.Rest/bin/Debug/net9.0/DialedIn.Facade.pdb

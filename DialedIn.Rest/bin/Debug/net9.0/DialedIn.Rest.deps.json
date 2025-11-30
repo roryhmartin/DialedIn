@@ -9,6 +9,7 @@
       "DialedIn.Rest/1.0.0": {
         "dependencies": {
           "DialedIn.Application": "1.0.0",
+          "DialedIn.Facade": "1.0.0",
           "DialedIn.Persistance": "1.0.0",
           "Microsoft.AspNetCore.OpenApi": "9.0.0",
           "Microsoft.EntityFrameworkCore": "9.0.9",
@@ -660,6 +661,18 @@
           }
         }
       },
+      "DialedIn.Facade/1.0.0": {
+        "dependencies": {
+          "DialedIn.Application": "1.0.0",
+          "Microsoft.AspNetCore.OpenApi": "9.0.0"
+        },
+        "runtime": {
+          "DialedIn.Facade.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
       "DialedIn.Persistance/1.0.0": {
         "dependencies": {
           "DialedIn.Domain": "1.0.0",
@@ -1003,6 +1016,11 @@
       "sha512": ""
     },
     "DialedIn.Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "DialedIn.Facade/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

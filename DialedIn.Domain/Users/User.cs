@@ -7,6 +7,7 @@ namespace DialedUp.Domain.Users;
 [Table("Users")]
 public class User
 {
+    //TODO: change naming convention to be PascalCase/Title case e.g FirstName
     public int id { get; set; }
     public string first_name { get; set; }
     public string last_name { get; set; }

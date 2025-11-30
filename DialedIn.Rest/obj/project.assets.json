@@ -997,6 +997,23 @@
           "Microsoft.AspNetCore.App"
         ]
       },
+      "DialedIn.Facade/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v9.0",
+        "dependencies": {
+          "DialedIn.Application": "1.0.0",
+          "Microsoft.AspNetCore.OpenApi": "9.0.0"
+        },
+        "compile": {
+          "bin/placeholder/DialedIn.Facade.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DialedIn.Facade.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
+      },
       "DialedIn.Persistance/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v9.0",
@@ -2987,6 +3004,11 @@
       "path": "../DialedIn.Domain/DialedIn.Domain.csproj",
       "msbuildProject": "../DialedIn.Domain/DialedIn.Domain.csproj"
     },
+    "DialedIn.Facade/1.0.0": {
+      "type": "project",
+      "path": "../DialedIn.Facade/DialedIn.Facade.csproj",
+      "msbuildProject": "../DialedIn.Facade/DialedIn.Facade.csproj"
+    },
     "DialedIn.Persistance/1.0.0": {
       "type": "project",
       "path": "../DialedIn.Persistance/DialedIn.Persistance.csproj",
@@ -2996,6 +3018,7 @@
   "projectFileDependencyGroups": {
     "net9.0": [
       "DialedIn.Application >= 1.0.0",
+      "DialedIn.Facade >= 1.0.0",
       "DialedIn.Persistance >= 1.0.0",
       "Microsoft.AspNetCore.OpenApi >= 9.0.0",
       "Microsoft.EntityFrameworkCore >= 9.0.9",
@@ -3030,6 +3053,9 @@
           "projectReferences": {
             "/Users/rorymartin/repos/DialedIn.API/DialedIn.Application/DialedIn.Application.csproj": {
               "projectPath": "/Users/rorymartin/repos/DialedIn.API/DialedIn.Application/DialedIn.Application.csproj"
+            },
+            "/Users/rorymartin/repos/DialedIn.API/DialedIn.Facade/DialedIn.Facade.csproj": {
+              "projectPath": "/Users/rorymartin/repos/DialedIn.API/DialedIn.Facade/DialedIn.Facade.csproj"
             },
             "/Users/rorymartin/repos/DialedIn.API/DialedIn.Persistance/DialedIn.Persistance.csproj": {
               "projectPath": "/Users/rorymartin/repos/DialedIn.API/DialedIn.Persistance/DialedIn.Persistance.csproj"

@@ -5,4 +5,4 @@ public record CreateUserFdto(
     string LastName,
     string Email,
     string Password,
-    List<string> Roles);
+    List<int> RoleIds);

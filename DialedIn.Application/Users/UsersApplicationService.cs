@@ -2,13 +2,10 @@ using DialedUp.Application.ClockEntries;
 using DialedUp.Domain.Roles;
 using DialedUp.Domain.UserRoles;
 using DialedUp.Domain.Users;
-using DialedUp.Persistance;
-using DialedUp.Persistance.queries.user;
-using Microsoft.EntityFrameworkCore;
 
 namespace DialedUp.Application.Users;
 
-public class UsersApplicationService
+public class UsersApplicationService : IUserApplicationService
 {
     private readonly IUserRepository _userRepository;
     private readonly IRoleRepository _roleRepository;
@@ -25,21 +22,21 @@ public class UsersApplicationService
        List<User> users = await _userRepository.GetAllUsersAsync();
        
        return users.Select(u => new UserAdto
-       {
-           Id = u.id,
-           FirstName = u.first_name,
-           LastName = u.last_name,
-           Email = u.email,
-           IsClockedIn = u.IsClockedIn,
-           LastEntry = u.ClockEntries
+       (
+           u.id,
+           u.first_name,
+           u.last_name,
+           u.email,
+           u.IsClockedIn,
+           u.ClockEntries
                .OrderByDescending(c => c.ClockInTime)
                .Select(c => new ClockEntryAdto(
                    c.Id,
                    c.ClockInTime,
                    c.ClockOutTime,
                    c.IsAmended)).FirstOrDefault()
-       })
-           .OrderByDescending(u => u.LastName)
+       ))
+           .OrderBy(u => u.LastName)
            .ToList();
     }
 
@@ -55,27 +52,27 @@ public class UsersApplicationService
             u.UserRoles.Select(ur => ur.Roles.Name).ToList())).ToList();
     }
 
-    public async Task<UserWithRolesAdto> CreateUserAsync(string firstName, string lastName, string? email, string password, List<int> roles)
+    public async Task<UserWithRolesAdto> CreateUserAsync(CreateUserAdto createUserAdto)
     {
-        if (string.IsNullOrWhiteSpace(email))
+        if (string.IsNullOrWhiteSpace(createUserAdto.Email))
         {
             throw new Exception("Email is required");
         }
 
-        if (await _userRepository.GetByEmailAsync(email))
+        if (await _userRepository.GetByEmailAsync(createUserAdto.Email))
         {
-            throw new Exception($"Email {email} already exists");
+            throw new Exception($"Email {createUserAdto.Email} already exists");
         }
 
-        string? hashedPassword = BCrypt.Net.BCrypt.HashPassword(password);
+        string? hashedPassword = BCrypt.Net.BCrypt.HashPassword(createUserAdto.Password);
 
-        List<Role> newUserRoles = await _roleRepository.getRolesbyIdAsync(roles);
+        List<Role> newUserRoles = await _roleRepository.getRolesbyIdAsync(createUserAdto.Roles);
 
         User newUser = new User
         {
-            first_name = firstName,
-            last_name = lastName,
-            email = email,
+            first_name = createUserAdto.FirstName,
+            last_name = createUserAdto.LastName,
+            email = createUserAdto.Email,
             password_hash = hashedPassword,
             created_date = DateTime.UtcNow,
             UserRoles = newUserRoles.Select(r => new UserRole { RoleId = r.Id }).ToList()
@@ -83,7 +80,7 @@ public class UsersApplicationService
 
         await _userRepository.AddUserAsync(newUser);
 
-        User? createdUser = await _userRepository.GetUserWithRolesByEmailAsync(email);
+        User? createdUser = await _userRepository.GetUserWithRolesByEmailAsync(createUserAdto.Email);
 
         return new UserWithRolesAdto
         (

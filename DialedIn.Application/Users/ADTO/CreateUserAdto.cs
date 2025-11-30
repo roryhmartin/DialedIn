@@ -5,4 +5,4 @@ public record CreateUserAdto(
     string LastName,
     string Email,
     string Password,
-    List<string> Roles );
+    List<int> Roles);

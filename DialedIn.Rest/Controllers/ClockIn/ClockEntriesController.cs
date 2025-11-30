@@ -1,7 +1,5 @@
-using DialedUp.Application.ClockEntries;
-using DialedUp.Application.Users;
-using DialedUp.Domain.ClockEntries;
-using DialedUp.Domain.Users;
+using DialedUp.Facade.ClockEntries.Interface;
+using DialedUp.Facade.Users;
 using Microsoft.AspNetCore.Mvc;
 
 namespace WebApplication1.Controllers;
@@ -10,17 +8,17 @@ namespace WebApplication1.Controllers;
 [Route("[controller]")]
 public class ClockEntriesController : ControllerBase
 {
-    private readonly ClockEntryApplicationService _clockEntryApplicationService;
+    private readonly IClockEntryFacadeApplicationService _clockEntryFacadeApplicationService;
 
-    public ClockEntriesController(ClockEntryApplicationService ClockEntryApplicationService)
+    public ClockEntriesController(IClockEntryFacadeApplicationService clockEntryFacadeApplicationService)
     {
-        _clockEntryApplicationService = ClockEntryApplicationService;
+        _clockEntryFacadeApplicationService = clockEntryFacadeApplicationService;
     }
-
+    
     [HttpPost("toggle-clock/{userId}")]
     public async Task<IActionResult> ToggleClock(int userId)
     {
-        UserAdto user = await _clockEntryApplicationService.ClockInOrOutAsync(userId);
+        UserFdto user = await _clockEntryFacadeApplicationService.ClockInOrOutAsync(userId);
         
         return Ok(user);
     }
